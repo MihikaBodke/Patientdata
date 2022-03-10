@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+      rel="stylesheet" type="text/SCSS"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Demention</title>
+
+    <style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: cornflowerblue;
+  min-width:320px;
+}
+
+h2 {
+  text-align: center;
+  margin: 50px 0;
+  color: #386c3d;
+  font-size: 47px;
+  font-family: 'Quicksand', sans-serif;
+  @media(max-width:540px){
+      font-size: 28px;
+    margin: 30px 0;
+  }
+}
+
+form {
+  padding: 0 10%;
+  section {
+    width: calc(50% - 40px);
+    padding: 20px;
+    background: #d3d3d3;
+    margin: 20px;
+    border-radius: 5px;
+    &.left {
+      float: left;
+    }
+    &.right {
+      float: right;
+    }
+    .input-container {
+      label {
+        display: block;
+        margin-bottom: 4px;
+        color: white;
+        font-size: 16px;
+        text-shadow: 0px 2px 1px #65ad6b;
+        font-family: 'Quicksand', sans-serif;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 5px 10px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background: #f9f9f9;
+        box-shadow: 0 2px 0px gray;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 16px;
+        color: #757575;
+        &:focus {
+          outline: none;
+          background: white;
+        }
+      }
+      textarea {
+        height: 122px;
+        padding: 15px 10px;
+        resize: none;
+      }
+      padding:10px;
+    }
+  }
+  .send-container {
+    float: right;
+    width: 100%;
+    text-align: right;
+    margin-right: 20px;
+    input {
+      background: gray;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover {
+        background: #8ed294;
+      }
+    }
+  }
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  @media(max-width:992px) {
+    padding: 0 5%;
+  }
+  @media(max-width:768px) {
+    margin-bottom:50px;
+    section {
+      width: 100%;
+      margin: 0;
+      &.left {
+        margin-bottom: -30px;
+      }
+    }
+    .send-container {
+      margin-right: 0;
+      margin-top:15px;
+      input{
+        width:100%;
+      }
+    }
+  }
+}
+
+
+
+    </style>
+  </head>
+
+
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+      <div class="container">
+        <a href="#" class="navbar-brand">Demention</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About Dementia</a>
+            </li>
+            <li class="nav-item">
+              <a href="#volunteers" class="nav-link">Our Volunteers</a>
+            </li>
+            <li class="nav-item">
+              <a href="#motivation" class="nav-link">Motivation</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <!--------Table-------------->
+  
+  
+  
+<form action="">
+  <section class="left">
+    <div class="input-container">
+      <label for="comments">Comments</label>
+      <textarea name="comments" id=""></textarea>
+    </div>
+     <div class="send-container">
+    <input type="submit" value="Send" onclick="return true"/>
+   </div>
+  </section>
+ 
+</form>
+
+
+  <!------------------------>
+
+
+
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy; 2021 Frontend Bootcamp</p>
+
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="enroll"
+      tabindex="-1"
+      aria-labelledby="enrollLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="enrollLabel">Enrollment</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead">Fill out this form and we will get back to you</p>
+            <form>
+              <div class="mb-3">
+                <label for="first-name" class="col-form-label">
+                  Organisation Name:
+                </label>
+                <input type="text" class="form-control" id="first-name" />
+              </div>
+              <div class="mb-3">
+                <label for="last-name" class="col-form-label">Person-incharge's Name:</label>
+                <input type="text" class="form-control" id="last-name" />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="col-form-label">Email:</label>
+                <input type="email" class="form-control" id="email" />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="col-form-label">Phone:</label>
+                <input type="tel" class="form-control" id="phone" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Submit</button>  
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  
+
+    
+  
+  </body>
+</html>
